@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import React from "react";
 import styles from "../../styles/Home.module.css";
 import postListStyles from "../../styles/PostList.module.css";
-import lodingStyles from "../../styles/Loading.module.css";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { postInterface } from "../types";
