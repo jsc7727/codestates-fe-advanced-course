@@ -2,7 +2,7 @@
   height: 60px;
   position: sticky;
   top: 0px;
-  background-color: #4001c7;
+  background-color: var(--codestates-color);
   display: flex;
   justify-content: center;
 }

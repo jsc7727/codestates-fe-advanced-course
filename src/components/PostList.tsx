@@ -6,10 +6,12 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { postInterface } from "../types";
 import Loading from "./Loading";
+import PaginationButtons from "./PaginationButtons";
 
 const PostList: NextPage = () => {
   const router = useRouter();
   const [data, setData] = useState<Array<postInterface> | null>(null);
+  const [index, setIndex] = useState<number>(0);
   useEffect(() => {
     fetch(`/api/posts`)
       .then((res) => res.json())
@@ -18,17 +20,18 @@ const PostList: NextPage = () => {
       });
   }, []);
 
-  if (data === null) {
-    return <Loading></Loading>;
-  }
   const onClickHandler = (id: number) => {
     router.push(`/posts/${id}`);
   };
+
+  if (data === null) {
+    return <Loading></Loading>;
+  }
   return (
     <div className={styles.container}>
       <main className={styles.main}>
         <div className={postListStyles.post_list}>
-          {data.map((v) => {
+          {data.slice(index, index + 10).map((v) => {
             console.log(v);
             return (
               <div onClick={() => onClickHandler(v.id)} key={v.id}>
@@ -38,6 +41,12 @@ const PostList: NextPage = () => {
             );
           })}
         </div>
+        <PaginationButtons
+          indexList={new Array(Math.ceil(data.length / 10))
+            .fill(null)
+            .map((_, idx) => idx)}
+          setIndex={setIndex}
+        ></PaginationButtons>
       </main>
     </div>
   );
