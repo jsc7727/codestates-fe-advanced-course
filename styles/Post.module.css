@@ -1,0 +1,38 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: 0.2px 1px 1px 0.2px solid rgb(187, 192, 202);
+  border-radius: 30px;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgb(187, 192, 202);
+  padding: 3rem;
+  font-size: 1.3rem;
+}
+
+.post_title {
+  display: flex;
+  justify-content: flex-start;
+}
+.post_id {
+  display: flex;
+  justify-content: flex-end;
+}
+.post_body {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post_id,
+.post_body {
+  padding: 1rem;
+  border-bottom: 0.3rem solid rgb(187, 192, 202);
+}
+
+.comment {
+  align-self: center;
+  width: 95%;
+  font-size: 1em;
+}
+.comment > div {
+  border-bottom: 0.2rem solid rgb(187, 192, 202);
+}

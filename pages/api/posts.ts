@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -11,13 +10,11 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const index = parseInt(req.query[`index`] as string);
-  console.log(index);
   const data = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
   if (isNaN(index)) {
-    console.log("index");
-    res.status(301).json(data?.data);
-    return;
+    res.status(200).json(data?.data);
   } else {
-    res.status(301).json(data?.data.slice(index, index + 10));
+    res.status(200).json(data?.data.slice(index, index + 10));
   }
+  return;
 }

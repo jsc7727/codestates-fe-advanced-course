@@ -1,0 +1,23 @@
+.post_list {
+  margin-top: 3rem;
+  border-top: 0.5rem solid rgb(201, 195, 195);
+  width: 70%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.post_list :hover {
+  background-color: gray;
+}
+
+.post_list > div {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem;
+  border-bottom: 0.2rem solid rgb(201, 195, 195);
+  justify-content: space-between;
+}
+
+.post_list > div > div {
+  display: flex;
+}
