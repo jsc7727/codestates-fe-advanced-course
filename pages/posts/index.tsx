@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
+import { useRouter } from "next/router";
 
-const Home: NextPage = () => {
+const Posts: NextPage = () => {
+  const data = axios.get(`https://jsonplaceholder.typicode.com/`);
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div>/</div>
+        <div>{`/Posts`}</div>
       </main>
 
       <footer className={styles.footer}>
@@ -32,4 +34,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Posts;
