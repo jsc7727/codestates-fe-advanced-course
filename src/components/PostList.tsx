@@ -2,9 +2,11 @@ import { NextPage } from "next";
 import React from "react";
 import styles from "../../styles/Home.module.css";
 import postListStyles from "../../styles/PostList.module.css";
+import lodingStyles from "../../styles/Loading.module.css";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { postInterface } from "../types";
+import Loading from "./Loading";
 
 const PostList: NextPage = () => {
   const router = useRouter();
@@ -18,7 +20,7 @@ const PostList: NextPage = () => {
   }, []);
 
   if (data === null) {
-    return <div>로딩중</div>;
+    return <Loading></Loading>;
   }
   const onClickHandler = (id: number) => {
     router.push(`/posts/${id}`);
@@ -32,7 +34,7 @@ const PostList: NextPage = () => {
             return (
               <div onClick={() => onClickHandler(v.id)} key={v.id}>
                 <div>{v.title}</div>
-                <div>{`작성자 ${v.id}`}</div>
+                <div>{`작성자 ${v.userId}`}</div>
               </div>
             );
           })}

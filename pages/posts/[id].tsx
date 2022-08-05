@@ -7,6 +7,7 @@ import HeaderBar from "../../src/components/HeaderBar";
 import Footer from "../../src/templates/Footer";
 import { postInterface, commentInterface } from "../../src/types";
 import { useEffect, useState } from "react";
+import Loading from "../../src/components/Loading";
 
 const Posts_id: NextPage = () => {
   const router = useRouter();
@@ -35,7 +36,7 @@ const Posts_id: NextPage = () => {
       <>
         <Header></Header>
         <HeaderBar></HeaderBar>
-        <div>로딩중</div>;
+        <Loading></Loading>;
       </>
     );
   }
