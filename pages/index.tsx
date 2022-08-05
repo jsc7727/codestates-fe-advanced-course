@@ -5,6 +5,7 @@ import Header from "../src/templates/Header";
 import Footer from "../src/templates/Footer";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Loading from "../src/components/Loading";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -15,11 +16,7 @@ const Home: NextPage = () => {
     <>
       <Header />
       <HeaderBar />
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <div>/</div>
-        </main>
-      </div>
+      <Loading></Loading>
       <Footer />
     </>
   );

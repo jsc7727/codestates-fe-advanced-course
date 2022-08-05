@@ -31,8 +31,7 @@ const PostList: NextPage = () => {
     <div className={styles.container}>
       <main className={styles.main}>
         <div className={postListStyles.post_list}>
-          {data.slice(index, index + 10).map((v) => {
-            console.log(v);
+          {data.slice(index * 10, index * 10 + 10).map((v) => {
             return (
               <div onClick={() => onClickHandler(v.id)} key={v.id}>
                 <div>{v.title}</div>
@@ -45,6 +44,7 @@ const PostList: NextPage = () => {
           indexList={new Array(Math.ceil(data.length / 10))
             .fill(null)
             .map((_, idx) => idx)}
+          index={index}
           setIndex={setIndex}
         ></PaginationButtons>
       </main>

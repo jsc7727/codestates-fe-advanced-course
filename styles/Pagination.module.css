@@ -31,7 +31,12 @@
   transition: 0.5s;
 }
 
-.pagination > button:hover {
+.paginationButton:hover {
   background-color: var(--codestates-color);
   color: var(--buton-hover-color);
+}
+
+.selected {
+  background-color: var(--codestates-color) !important;
+  color: var(--buton-hover-color) !important;
 }
